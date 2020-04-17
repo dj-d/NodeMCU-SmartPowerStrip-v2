@@ -2,4 +2,4 @@
 NodeMCU sketch to control a power strip
 
 ### Development
-- [] Button to reset wifi
+- [ ] Button to reset wifi
