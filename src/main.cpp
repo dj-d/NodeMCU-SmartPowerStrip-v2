@@ -56,7 +56,7 @@ void initRelay(int relay_size) {
  * @return "true" if is correct | "false" if is incorrect
  */
 bool is_valid_relay_pin(int num) {
-    if (num >= 0 && num <= get_relay_size() - 1) {
+    if (num >= 0 && num <= get_relay_size() - 1 && num != NULL) {
         return true;
     }
 
@@ -111,28 +111,38 @@ void checkArgs() {
     int html_code;
     String message = "";
 
-    String action = server.arg(0);
-    int relay_num = server.arg(1).toInt() - 1;
+    DynamicJsonDocument body(1024);
 
-    if ((action == "on") || (action == "off")) {
-        if (is_valid_relay_pin(relay_num)) {
-            html_code = 200;
-            message = "Successful action";
+    if (server.hasArg("plain") == false) {
+        html_code = 400;
+        message = "Body not found";
+    } else {
+        deserializeJson(body, server.arg("plain"));
 
-            if (action == "on") {
-                turnOn(relay[relay_num]);
-                status_relay[relay_num] = true;
+        String action = body["action"];
+        int pin = body["pin"];
+        pin -= 1;
+
+        if (action == "on" || action == "off") {
+            if (is_valid_relay_pin(body["pin"])) {
+                html_code = 200;
+                message = "Successful action";
+
+                if (action == "on") {
+                    turnOn(relay[pin]);
+                    status_relay[pin] = true;
+                } else {
+                    turnOff(relay[pin]);
+                    status_relay[pin] = false;
+                }
             } else {
-                turnOff(relay[relay_num]);
-                status_relay[relay_num] = false;
+                html_code = 400;
+                message = "Relay number not found";
             }
         } else {
             html_code = 400;
-            message = "Relay number not found";
+            message = "Action not found";
         }
-    } else {
-        html_code = 400;
-        message = "Action not found";
     }
 
     sendResponse(html_code, message);
@@ -174,9 +184,9 @@ void setup() {
     // wifiManager.resetSettings();
 
     wifiManager.setTimeout(180);
-    wifiManager.setHostname("ESP_name");
+    wifiManager.setHostname("ESP_PowerStrip");
 
-    if (!wifiManager.autoConnect("ESP - Access Poinit")) {
+    if (!wifiManager.autoConnect("ESP_PowerStrip - Access Poinit")) {
         Serial.println("Failed to connect and hit timeout");
         delay(3000);
 
