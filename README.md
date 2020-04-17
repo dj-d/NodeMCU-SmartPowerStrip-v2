@@ -13,4 +13,4 @@ bool status_relay[] = {false, false, false, false};
 
 ## Using
 
-- To connect the device to the network visit: __tzapu/WiFIManager (https://github.com/tzapu/WiFiManager)__
+- To connect the device to the network visit: __[tzapu/WiFIManager](https://github.com/tzapu/WiFiManager)__
