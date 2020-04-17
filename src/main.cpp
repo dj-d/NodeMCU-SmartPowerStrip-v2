@@ -117,6 +117,7 @@ void checkArgs() {
     if ((action == "on") || (action == "off")) {
         if (is_valid_relay_pin(relay_num)) {
             html_code = 200;
+            message = "Successful action";
 
             if (action == "on") {
                 turnOn(relay[relay_num]);
