@@ -11,7 +11,14 @@ bool status_relay[] = {false, false, false, false};
 ### Using
 
 - To connect the device to the network visit: __[tzapu/WiFIManager](https://github.com/tzapu/WiFiManager)__
-- To call API use 
+- To call API use a __POST__ request and use JSON for the data.
+  - Example: 
+  ```json
+  {
+    "action": "on",
+    "pin": 2
+  }
+  ```
 
 ### Development
 - [ ] Button to reset wifi
