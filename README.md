@@ -11,13 +11,13 @@ NodeMCU sketch to control a power strip
 ### Using
 
 - To connect the device to the network visit: __[tzapu/WiFIManager](https://github.com/tzapu/WiFiManager)__
-- Call API use a __POST__ request and use JSON for the data.
+- Call API use a __POST__ request and use __JSON__ for the data.
   - Example
     - API:
-      - For action:
-         192.168.x.x/
-      - For status:
-         192.168.x.x/status
+        | Command | Description |
+        | --- | --- |
+        | / | To start the action described in the body |
+        | /status | To receive the status of the relays |
     - JSON:
       ```json
         {
