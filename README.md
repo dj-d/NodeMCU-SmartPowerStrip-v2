@@ -23,14 +23,14 @@ NodeMCU sketch to control a power strip
         ```json
           {
             "action": "on",
-            "pin": YOUR_RELAY_NUMBER
+            "pin": 1
           }
         ```
       - Turn off:
         ```json
           {
             "action": "off",
-            "pin": YOUR_RELAY_NUMBER
+            "pin": 2
           }
         ```
 
