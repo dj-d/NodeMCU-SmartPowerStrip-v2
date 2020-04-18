@@ -33,7 +33,7 @@ NodeMCU sketch to control a power strip
             "pin": 2
           }
         ```
-    -JSON body received following the request /status (with 4 relay):
+    - JSON body received following the request /status (with 4 relay):
        ```json
          {
            "relay_1": false,
