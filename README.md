@@ -29,3 +29,6 @@ NodeMCU sketch to control a power strip
 ### Development
 - [ ] Button to reset wifi
 
+### Notes
+It is possible to use any relay module (1, 2, ..., 16) only by changing the pins, adding or removing them, and the whole system will adapt automatically
+
