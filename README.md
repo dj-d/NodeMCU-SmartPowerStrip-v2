@@ -21,8 +21,8 @@ NodeMCU sketch to control a power strip
     - JSON:
       ```json
         {
-        "action": "on",
-        "pin": 2
+          "action": "on",
+          "pin": 2
         }
       ```
 
