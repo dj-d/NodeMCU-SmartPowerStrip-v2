@@ -26,7 +26,7 @@ NodeMCU sketch to control a power strip
             "pin": 2
           }
         ```
-      - Turn of:
+      - Turn off:
         ```json
           {
             "action": "off",
