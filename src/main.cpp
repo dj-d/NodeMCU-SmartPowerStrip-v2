@@ -196,8 +196,8 @@ void setup() {
 
     Serial.println("Connected");
 
-    server.on("/", checkArgs);
-    server.on("/status", getStatus);
+    server.on("/ps", checkArgs);
+    server.on("/ps/status", getStatus);
 
     server.begin();
 }

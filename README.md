@@ -16,8 +16,8 @@ NodeMCU sketch to control a power strip
     - API:
         | Command | Description |
         | --- | --- |
-        | / | To start the action described in the body |
-        | /status | To receive the status of the relays |
+        | /ps | To start the action described in the body |
+        | /ps/status | To receive the status of the relays |
     - JSON body to send:
       - Turn on:
         ```json
