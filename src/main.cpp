@@ -160,7 +160,7 @@ void getStatus() {
 
     for (int i = 0; i < get_relay_size(); i++) {
         int num = i + 1;
-        String name = "in" + String(num);
+        String name = "relay_" + String(num);
 
         doc[name] = status_relay[i];
     }
