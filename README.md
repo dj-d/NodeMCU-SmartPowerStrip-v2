@@ -19,12 +19,20 @@ NodeMCU sketch to control a power strip
         | / | To start the action described in the body |
         | /status | To receive the status of the relays |
     - JSON:
-      ```json
-        {
-          "action": "on",
-          "pin": 2
-        }
-      ```
+      - Turn on:
+        ```json
+          {
+            "action": "on",
+            "pin": 2
+          }
+        ```
+      - Turn of:
+        ```json
+          {
+            "action": "off",
+            "pin": 2
+          }
+        ```
 
 ### Development
 - [ ] Button to reset wifi
