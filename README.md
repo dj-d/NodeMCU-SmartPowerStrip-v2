@@ -2,7 +2,7 @@
 
 NodeMCU sketch to control a power strip
 
-### Startup
+## Startup
 
 - Change pins and modify status_relay variable with same number of pins
 ```cpp
@@ -10,32 +10,32 @@ NodeMCU sketch to control a power strip
   bool status_relay[] = {false, false, false, false};
 ```
 
-### Using
+## Using
 
 - To connect the device to the network visit: __[tzapu/WiFIManager](https://github.com/tzapu/WiFiManager)__
 
-- API:
+- __API__
 
-  | Description | Method | Endpoint | Paramethers |
+  | Description | Method | Endpoint | Body elements |
   | --- | --- | --- | --- |
   | To start the action described in the body | __POST__ | /ps | "*__action__*" and "*__pin__*" |
   | To receive the status of the relays | __GET__ | /ps/status | - |
   | To receive the number of the relays | __GET__ | /ps/get_relay_number | - |
 
-- Supported actions:
+- __Supported actions__
 
     | Action | Description |
     | --- | --- |
-    | on | Turn on relay |
-    | off | Turn off relay |
+    | *on* | Turn on relay |
+    | *off* | Turn off relay |
 
-- Examples (with 4 relays):
+- __Examples__ (with 4 relays):
   
   - Request body for "*__/ps__*":
     ```json
         {
           "action": "YOUT_ACTION",
-          "pin": YOUR_RELAY_NUMBER
+          "pin": 2
         }
     ```
 
@@ -64,10 +64,10 @@ NodeMCU sketch to control a power strip
         }
     ```
 
-### Development
+## Development
 
 - [ ] Button to reset wifi
 
-### Notes
+## Notes
 
 It is possible to use any relay module (1, 2, ..., n) only by changing the pins, adding or removing them, and the whole system will adapt automatically

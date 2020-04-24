@@ -154,6 +154,9 @@ void getStatus() {
     server.send(html_code, "text/json", status);
 }
 
+/**
+ * Send the number of relays
+ */
 void getRelayNumber() {
     String data;
     DynamicJsonDocument doc(1024);
