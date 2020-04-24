@@ -1,7 +1,9 @@
 # NodeMCU-SmartPowerStrip-v2
+
 NodeMCU sketch to control a power strip
 
 ### Startup
+
 - Change pins and modify status_relay variable with same number of pins
 ```cpp
   int relay[] = {0, 4, 5, 16};
@@ -20,7 +22,7 @@ NodeMCU sketch to control a power strip
   | To receive the status of the relays | __GET__ | /ps/status | - |
   | To receive the number of the relays | __GET__ | /ps/get_relay_number | - |
 
-- Actions:
+- Supported actions:
 
     | Action | Description |
     | --- | --- |
@@ -32,15 +34,15 @@ NodeMCU sketch to control a power strip
   - Request body for "*__/ps__*":
     ```json
         {
-          "action": "on",
-          "pin": 1
+          "action": "YOUT_ACTION",
+          "pin": YOUR_RELAY_NUMBER
         }
     ```
 
   - Response body for "*__/ps__*":
     ```json
         {
-          "msg": "Successful action"
+          "msg": "SOME_MESSAGE"
         }
     ```
   
@@ -63,7 +65,9 @@ NodeMCU sketch to control a power strip
     ```
 
 ### Development
+
 - [ ] Button to reset wifi
 
 ### Notes
+
 It is possible to use any relay module (1, 2, ..., n) only by changing the pins, adding or removing them, and the whole system will adapt automatically
