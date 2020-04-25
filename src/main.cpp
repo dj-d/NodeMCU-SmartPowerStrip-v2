@@ -210,7 +210,7 @@ void setup() {
 
     server.on("/ps", checkArgs);
     server.on("/ps/status", getStatus);
-    server.on("/get_relay_number", getRelayNumber);
+    server.on("/ps/get_relay_number", getRelayNumber);
     server.on("/get_type", getType);
 
     server.begin();
