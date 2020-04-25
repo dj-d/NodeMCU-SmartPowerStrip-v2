@@ -155,6 +155,20 @@ void getStatus() {
 }
 
 /**
+ * Send device type
+ */
+void getType() {
+    String data;
+    DynamicJsonDocument doc(1024);
+
+    doc["type"] = "power_strip";
+
+    serializeJson(doc, data);
+
+    server.send(200, "text/json", data);
+}
+
+/**
  * Send the number of relays
  */
 void getRelayNumber() {
@@ -196,6 +210,7 @@ void setup() {
 
     server.on("/ps", checkArgs);
     server.on("/ps/status", getStatus);
+    server.on("/ps/get_type", getType);
     server.on("/ps/get_relay_number", getRelayNumber);
 
     server.begin();
