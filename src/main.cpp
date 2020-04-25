@@ -211,7 +211,7 @@ void setup() {
     server.on("/ps", checkArgs);
     server.on("/ps/status", getStatus);
     server.on("/ps/get_type", getType);
-    server.on("/ps/get_relay_number", getRelayNumber);
+    server.on("/get_relay_number", getRelayNumber);
 
     server.begin();
 }

@@ -20,8 +20,8 @@ NodeMCU sketch to control a power strip
   | --- | --- | --- | --- |
   | To start the action described in the body | __POST__ | /ps | "*__action__*" and "*__pin__*" |
   | To receive the status of the relays | __GET__ | /ps/status | - |
-  | To receive the type of device | __GET__ | /ps/get_type | - |
   | To receive the number of the relays | __GET__ | /ps/get_relay_number | - |
+  | To receive the type of device | __GET__ | /get_type | - |
 
 - __Supported actions__
 
@@ -58,17 +58,17 @@ NodeMCU sketch to control a power strip
     ```
     * ___true__ indicates that the relay is turned on, __false__ indicates that the relay is turned off_
   
-  - Response body for "*__/ps/get_type__*":
-    ```json
-        {
-          "type": "power_strip"
-        }
-    ```
-
   - Response body for "*__/ps/get_relay_number__*" (with 4 relays):
     ```json
         {
           "number": 4
+        }
+    ```
+
+  - Response body for "*__/get_type__*":
+    ```json
+        {
+          "type": "power_strip"
         }
     ```
 
